@@ -13,7 +13,7 @@
     
 2. < ??? >: Univariate analysis of numerical data
 
-3. cat_analysis: Output categorical analysis of provider characteristics
+3. cat_analysis.py: Output categorical analysis of provider characteristics
     - 3.5: cat_update: Remove unnecessary/redundant columns from sheet 2 based on categorical analysis
     
 4. excluded_providers.py: Output information on excluded providers
@@ -28,10 +28,10 @@
     
 ## 3. Cluster Analysis
 
-1. KMeansCluster: Perform cluster analysis
+1. KMeansCluster.py: Perform cluster analysis
     - TODO: If possible, add an extra column with cluster numbers to make following cluster analysis easier?
     
-2. < insert file name (rachel) >: Calculate numerical analysis within clusters
+2. < ??? >: Calculate numerical analysis within clusters
 
 
 
