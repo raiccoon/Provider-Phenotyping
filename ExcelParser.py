@@ -38,8 +38,15 @@ for row in df.itertuples(index = False):
     md[row.SER_CID][row.Metric.replace(" ", "_") + "_denominator"] = row.Denominator
     md[row.SER_CID][row.Metric.replace(" ", "_") + "_value"] = row.Value
     
-mdf = pd.DataFrame.from_dict(md, orient="index")
+mdf = pd.DataFrame.from_dict(md, orient="index").rename_axis('SER_CID').reset_index()
 mdf.to_excel('data\\metrics_raw.xlsx')
 
-cdf = pd.DataFrame.from_dict(cd, orient="index")
+cdf = pd.DataFrame.from_dict(cd, orient="index").rename_axis('SER_CID').reset_index()
 cdf.to_excel('data\\categorical_raw.xlsx')
+
+# Remove providers with missing data
+mdf_dropna = mdf.dropna().reset_index()
+mdf_dropna.to_excel('data\\metrics_na_removed.xlsx')
+
+cdf_dropna = cdf[cdf.SER_CID.isin(mdf_dropna.SER_CID)].reset_index()
+cdf_dropna.to_excel('data\\categorical_na_removed.xlsx')
