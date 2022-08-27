@@ -1,7 +1,8 @@
 # Remove unnecessary/redundant columns from Characteristics matrix
 import pandas as pd
 
-df = pd.read_excel('data\\raw_data.xlsx', 1)
+# categorical_na_removed: categorical data extracted from EPIC Signal, with empty rows removed
+df = pd.read_excel('data\\categorical_na_removed.xlsx')
 
 # Build dict for dataframe
 data = {}
@@ -12,4 +13,4 @@ data['Specialty'] = df['Department'].str[10:]
 
 df2 = pd.DataFrame(data)
 
-df2.to_excel('categorical\\characteristics.xlsx')
+df2.to_excel('data\\categorical_updated.xlsx')
