@@ -1,8 +1,8 @@
 import pandas as pd
 from GetColumns import get_columns
 
-# log_transformed_data: Data with log transofmration
-df = pd.read_excel('data\\log_transformed_data.xlsx')
+# metrics_log: Metric data with log transofmration
+df = pd.read_excel('data\\metrics_log.xlsx')
 print(df)
 
 # Generate column names with _log tag
@@ -18,4 +18,4 @@ for s in columns:
     df[s + '_zscore'] = (df[s] - df[s].mean()) / df[s].std()
 print(df)
 
-df.to_excel('data\\log_zscore_transformed_data.xlsx')
+df.to_excel('data\\metrics_log_z.xlsx')

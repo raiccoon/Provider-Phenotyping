@@ -5,7 +5,7 @@ from sklearn.cluster import KMeans
 from GetColumns import get_columns
 
 # Using transformed data: log transformation + z-score transformation.
-df = pd.read_excel('C:\\Users\\apple\\Downloads\\log_zscore_transformed_data.xlsx')
+df = pd.read_excel('data\\metrics_log_z.xlsx')
 # print(df)
 
 IDList = []

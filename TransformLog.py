@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 from GetColumns import get_columns
 
-# raw_data: Raw data extracted from XML file, with empty rows removed
-df = pd.read_excel('data\\raw_data.xlsx')
+# metrics_na_removed: metric data extracted from EPIC Signal, with empty rows removed
+df = pd.read_excel('data\\metrics_na_removed.xlsx')
 print(df)
 
 # Generate column names
@@ -18,5 +18,5 @@ for s in columns:
     df[s + '_log'] = np.log10(df[s])
 print(df)
 
-df.to_excel('data\\log_transformed_data.xlsx')
+df.to_excel('data\\metrics_log.xlsx')
 

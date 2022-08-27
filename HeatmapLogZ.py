@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from GetColumns import get_columns
 
 # Using z-score data.
-df = pd.read_excel('C:\\Users\\apple\\Downloads\\log_zscore_transformed_data.xlsx')
+df = pd.read_excel('data\\metrics_log_z.xlsx')
 
 metrics = ["Time in Notes per Day", "Time in Notes per Appointment", "Progress Note Length",
     "Length of Documentation per Appointment", "Note Composition Method by Author - Manual"]

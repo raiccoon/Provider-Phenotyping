@@ -4,7 +4,7 @@ import numpy as np
 from GetColumns import get_columns
 
 # Using z-score data.
-df = pd.read_excel('C:\\Users\\apple\\Downloads\\log_zscore_transformed_data.xlsx')
+df = pd.read_excel('data\\metrics_log_z.xlsx')
 # print(df)
 
 IDList = []
@@ -54,7 +54,7 @@ for i in range(len(reindexed)):
 df_clustered = df.reindex(new_index)
 print(df_clustered)
 
-df_clustered.to_excel('logz_clustered_kmeans.xlsx')
+df_clustered.to_excel('data\\clustered_kmeans_log_z.xlsx')
 
 
 
