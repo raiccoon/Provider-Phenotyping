@@ -7,26 +7,23 @@ from GetColumns import get_columns
 df = pd.read_excel('data\\metrics_log_z.xlsx')
 # print(df)
 
-IDList = []
-for row in df.itertuples(index = False):    
-    IDList.append(row.SER_CID)
-# print(IDList)
-
 metrics = ["Time in Notes per Day", "Time in Notes per Appointment", "Progress Note Length",
     "Length of Documentation per Appointment", "Note Composition Method by Author - Manual"]
 
 columns = get_columns(metrics, suffix = "_log_zscore")
 
+IDList = []
 data = []
 for index, row in df.iterrows():
+    IDList.append(int(row.SER_CID))
     lst = []
     for s in columns:
         lst.append(row[s])
 
     data.append(lst)
-# print(data)
 arr = np.array(data)
 
+# Cluster analysis
 numClusters = 4
 kmeans = KMeans(n_clusters = numClusters).fit(arr)
 clusters = kmeans.labels_
