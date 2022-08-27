@@ -36,6 +36,7 @@ If EPIC Signal file is saved as XML, open in Excel and save as Excel Workbook (.
 1. ClusterNumberDeterminationElbow.py: Determine optimal k value for K-Means cluster algorithm
 
 2. KMeansClusterLogZ.py: Perform cluster analysis
+    - Run multiple times, choose clustering with lowest SSE
 
 3. HeatmapLogZ.py: Generate Heatmap visualization of data
     

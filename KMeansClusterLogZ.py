@@ -30,7 +30,7 @@ arr = np.array(data)
 numClusters = 4
 kmeans = KMeans(n_clusters = numClusters).fit(arr)
 clusters = kmeans.labels_
-# print(clusters)
+df['Cluster'] = clusters
 
 clustered = []
 for i in range(numClusters):
