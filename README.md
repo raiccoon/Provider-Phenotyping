@@ -1,5 +1,6 @@
 # Provider-Phenotyping
 
+
 ## 1. Data Wrangling and Categorical Analysis
 
 If EPIC Signal file is saved as XML, open in Excel and save as Excel Workbook (.xlsx) file
@@ -17,6 +18,7 @@ If EPIC Signal file is saved as XML, open in Excel and save as Excel Workbook (.
     
 3. CategoryExcluded.py: Output information on excluded providers
 
+
 ## 2. Transform Numerical Data
 
 5. TransformLog.py: Perform log transformation on data
@@ -25,6 +27,7 @@ If EPIC Signal file is saved as XML, open in Excel and save as Excel Workbook (.
 6. TransformLogZ.py: Generate z-scores from log transformed data
     - Output to new columns with _zscore tag
     
+
 ## 3. Cluster Analysis
 
 1. ClusterNumberDeterminationElbow.py: Determine optimal k value for K-Means cluster algorithm
@@ -34,6 +37,7 @@ If EPIC Signal file is saved as XML, open in Excel and save as Excel Workbook (.
 3. HeatmapLogZ.py: Generate Heatmap visualization of data
     
 4. < ??? >: Calculate numerical analysis within clusters
+
 
 ## 4. Cluster Analysis of Shuffled Data
 
