@@ -13,8 +13,8 @@ df.columns = df.columns.str.replace(" ", "_")
 metrics = ["Length of Documentation per Appointment", "Note Composition Method by Author - Manual",
     "Progress Note Length", "Time in Notes per Appointment", "Time in Notes per Day"]
 
-data_m = {}
-data_c = {}
+md = {}
+cd = {}
 
 for row in df.itertuples(index = False):
     if row.Reporting_Period_Start_Date != '5/29/2022':
@@ -23,9 +23,9 @@ for row in df.itertuples(index = False):
     if row.Metric not in metrics:
         continue
     
-    if row.SER_CID not in data_m:
-        data_m[row.SER_CID] = {}
-        data_c[row.SER_CID] = {
+    if row.SER_CID not in md:
+        md[row.SER_CID] = {}
+        cd[row.SER_CID] = {
             'Type': row.Type,
             'Provider_Type': row.Provider_Type,
             'Service_Area': row.Service_Area,
@@ -34,12 +34,12 @@ for row in df.itertuples(index = False):
             'User_Type': row.User_Type
         }
 
-    data_m[row.SER_CID][row.Metric.replace(" ", "_") + "_numerator"] = row.Numerator
-    data_m[row.SER_CID][row.Metric.replace(" ", "_") + "_denominator"] = row.Denominator
-    data_m[row.SER_CID][row.Metric.replace(" ", "_") + "_value"] = row.Value
+    md[row.SER_CID][row.Metric.replace(" ", "_") + "_numerator"] = row.Numerator
+    md[row.SER_CID][row.Metric.replace(" ", "_") + "_denominator"] = row.Denominator
+    md[row.SER_CID][row.Metric.replace(" ", "_") + "_value"] = row.Value
     
-df_m = pd.DataFrame.from_dict(data_m, orient="index")
-df_m.to_excel('data\\metrics_raw.xlsx')
+mdf = pd.DataFrame.from_dict(md, orient="index")
+mdf.to_excel('data\\metrics_raw.xlsx')
 
-df_c = pd.DataFrame.from_dict(data_c, orient="index")
-df_c.to_excel('data\\categorical_raw.xlsx')
+cdf = pd.DataFrame.from_dict(cd, orient="index")
+cdf.to_excel('data\\categorical_raw.xlsx')
