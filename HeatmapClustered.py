@@ -1,7 +1,7 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from get_columns import get_columns
+from GetColumns import get_columns
 
 # Using z-score data.
 df = pd.read_excel('C:\\Users\\apple\\Downloads\\logz_clustered_kmeans_lowest_blocked(final).xlsx')

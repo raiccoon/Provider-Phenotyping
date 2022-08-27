@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.cluster import KMeans
 import numpy as np
-from get_columns import get_columns
+from GetColumns import get_columns
 
 df = pd.read_excel('C:\\Users\\apple\\Downloads\\log_zscore_transformed_data.xlsx')
 print(df)
