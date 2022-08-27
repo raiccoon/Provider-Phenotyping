@@ -29,29 +29,22 @@ kmeans = KMeans(n_clusters = numClusters).fit(arr)
 clusters = kmeans.labels_
 df['Cluster'] = clusters
 
+# Print information about clusters
 clustered = []
 for i in range(numClusters):
     clustered.append([])
 for i in range(len(IDList)):
     clustered[clusters[i]].append(IDList[i])
-
-reindexed = []
 for i in range(numClusters):
     print('Cluster:', i)
     print(clustered[i])
-    reindexed = reindexed + clustered[i]
 
 sse = kmeans.inertia_
-print('SSE:')
-print(sse)
+print('SSE:', sse)
 
-new_index = []
-for i in range(len(reindexed)):
-    new_index.append(df[df['SER_CID'] == reindexed[i]].index[0])
-df_clustered = df.reindex(new_index)
-print(df_clustered)
-
-df_clustered.to_excel('data\\clustered_kmeans_log_z.xlsx')
+# Output clusters
+df = df.sort_values(by=['Cluster'])
+df.to_excel('data\\clustered_kmeans_log_z.xlsx')
 
 
 
