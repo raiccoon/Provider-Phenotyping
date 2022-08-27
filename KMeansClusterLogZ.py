@@ -42,15 +42,8 @@ for i in range(numClusters):
 sse = kmeans.inertia_
 print('SSE:', sse)
 
-# Output clusters
+# Output data sorted by cluster
+# Sheet name includes SSE to run clustering multiple times, save sheets separately, and compare afterward
+# SSE is rounded to 10ths place, decimal point removed
 df = df.sort_values(by=['Cluster'])
-df.to_excel('data\\clustered_kmeans_log_z.xlsx')
-
-
-
-
-    
-    
-
-
-
+df.to_excel('data\\clustered_kmeans_{}.xlsx'.format((int(sse*10))))
