@@ -34,7 +34,7 @@ If EPIC Signal file is saved as XML, open in Excel and save as Excel Workbook (.
 
 3. HeatmapLogZ.py: Generate Heatmap visualization of data
     
-4. < ??? >: Calculate numerical analysis within clusters
+4. ClusterAnalysis.py: Calculate numerical analysis within clusters
 
 ## 4. Cluster Analysis of Shuffled Data
 
